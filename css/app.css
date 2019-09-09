@@ -5,11 +5,11 @@
   2. Components
 */
 #amplitude-player {
-  background: #FFFFFF;
-  margin: none;
-  padding: none;
-  display: flex;
-  }
+	background: #FFFFFF;
+	margin: none;
+	padding: none;
+	display: flex;
+}
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
@@ -30,10 +30,153 @@
 	width: 100%;
 }}
 
+#control-container {
+	margin-top: 25px;
+	margin-top: 20px;
+}
+
+#control-container #repeat-container {
+	width: 25%;
+	float: left;
+	padding-top: 20px;
+}
+
+#control-container #repeat-container #repeat {
+	width: 24px;
+	height: 19px;
+	cursor: pointer;
+}
+
+#control-container #repeat-container #repeat.amplitude-repeat-off {
+	background: url("../img/repeat-off.svg");
+}
+
+#control-container #repeat-container #repeat.amplitude-repeat-on {
+	background: url("../img/repeat-on.svg");
+}
+
+#control-container #repeat-container #shuffle {
+	width: 23px;
+	height: 19px;
+	cursor: pointer;
+	float: right;
+}
+
+#control-container #repeat-container #shuffle.amplitude-shuffle-off {
+	background: url("../img/shuffle-off.svg");
+}
+
+#control-container #repeat-container #shuffle.amplitude-shuffle-on {
+	background: url("../img/shuffle-on.svg");
+}
+
+@media all and (-ms-high-contrast: none) {
+#control-container *::-ms-backdrop, #control-container #control-container {
+	margin-top: 40px;
+	float: none;
+}}
+
+#control-container #central-control-container {
+	width: 50%;
+	float: left;
+
+}
+
+#control-container #central-control-container #central-controls {
+	width: 130px;
+	margin: auto;
+}
+
+#control-container #central-control-container #central-controls #previous {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	background: url("../img/prev.svg");
+	background-repeat: no-repeat;
+	float: left;
+	margin-top: 10px;
+	margin-right: -5px;
+}
+
+#control-container #central-control-container #central-controls #play-pause {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	float: left;
+}
+
+#control-container #central-control-container #central-controls #play-pause.amplitude-paused {
+	background: url("../img/play.svg");
+}
+
+#control-container #central-control-container #central-controls #play-pause.amplitude-playing {
+		background: url("../img/pause.svg");
+}
+
+#control-container #central-control-container #central-controls #next {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	background: url("../img/next.svg");
+	background-repeat: no-repeat;
+	float: left;
+	margin-top: 10px;
+	margin-left: -5px;
+}
+
+#control-container #volume-container {
+	width: 25%;
+	float: left;
+	padding-top: 20px;
+}
+
+#control-container #volume-container #shuffle-right {
+	width: 23px;
+	height: 19px;
+	cursor: pointer;
+	margin: auto;
+}
+
+#control-container #volume-container #shuffle-right.amplitude-shuffle-off {
+	background: url("../img/shuffle-off.svg");
+}
+
+#control-container #volume-container #shuffle-right.amplitude-shuffle-on {
+	background: url("../img/shuffle-on.svg");
+}
+
+#control-container .amplitude-mute {
+	cursor: pointer;
+	width: 25px;
+	height: 19px;
+	float: left;
+}
+
+#control-container .amplitude-mute.amplitude-not-muted {
+	background: url("../img/volume.svg");
+	background-repeat: no-repeat;
+}
+
+#control-container .amplitude-mute.amplitude-muted {
+	background: url("../img/mute.svg");
+	background-repeat: no-repeat;
+}
+
+#control-container:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .song {
 	cursor: pointer;
 	padding: 10px;
+	background: #FFCC00
 }
+
 .song .song-now-playing-icon-container {
 	float: left;
 	width: 20px;
@@ -326,99 +469,6 @@ div#progress-container {
   div#progress-container input[type=range]:focus::-ms-fill-upper {
     background: #00adfb; }
 
-div#control-container {
-  margin-top: 25px;
-  margin-top: 20px; }
-  div#control-container div#repeat-container {
-    width: 25%;
-    float: left;
-    padding-top: 20px; }
-    div#control-container div#repeat-container div#repeat {
-      width: 24px;
-      height: 19px;
-      cursor: pointer; }
-      div#control-container div#repeat-container div#repeat.amplitude-repeat-off {
-        background: url("../img/repeat-off.svg"); }
-      div#control-container div#repeat-container div#repeat.amplitude-repeat-on {
-        background: url("../img/repeat-on.svg"); }
-    div#control-container div#repeat-container div#shuffle {
-      width: 23px;
-      height: 19px;
-      cursor: pointer;
-      float: right; }
-      div#control-container div#repeat-container div#shuffle.amplitude-shuffle-off {
-        background: url("../img/shuffle-off.svg"); }
-      div#control-container div#repeat-container div#shuffle.amplitude-shuffle-on {
-        background: url("../img/shuffle-on.svg"); }
-  @media all and (-ms-high-contrast: none) {
-    div#control-container *::-ms-backdrop, div#control-container div#control-container {
-      margin-top: 40px;
-      float: none; } }
-  div#control-container div#central-control-container {
-    width: 50%;
-    float: left; }
-    div#control-container div#central-control-container div#central-controls {
-      width: 130px;
-      margin: auto; }
-      div#control-container div#central-control-container div#central-controls div#previous {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        background: url("../img/prev.svg");
-        background-repeat: no-repeat;
-        float: left;
-        margin-top: 10px;
-        margin-right: -5px; }
-      div#control-container div#central-control-container div#central-controls div#play-pause {
-        display: inline-block;
-        width: 60px;
-        height: 60px;
-        cursor: pointer;
-        float: left; }
-        div#control-container div#central-control-container div#central-controls div#play-pause.amplitude-paused {
-          background: url("../img/play.svg"); }
-        div#control-container div#central-control-container div#central-controls div#play-pause.amplitude-playing {
-          background: url("../img/pause.svg"); }
-      div#control-container div#central-control-container div#central-controls div#next {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        background: url("../img/next.svg");
-        background-repeat: no-repeat;
-        float: left;
-        margin-top: 10px;
-        margin-left: -5px; }
-  div#control-container div#volume-container {
-    width: 25%;
-    float: left;
-    padding-top: 20px; }
-    div#control-container div#volume-container div#shuffle-right {
-      width: 23px;
-      height: 19px;
-      cursor: pointer;
-      margin: auto; }
-      div#control-container div#volume-container div#shuffle-right.amplitude-shuffle-off {
-        background: url("../img/shuffle-off.svg"); }
-      div#control-container div#volume-container div#shuffle-right.amplitude-shuffle-on {
-        background: url("../img/shuffle-on.svg"); }
-  div#control-container div.amplitude-mute {
-    cursor: pointer;
-    width: 25px;
-    height: 19px;
-    float: left; }
-    div#control-container div.amplitude-mute.amplitude-not-muted {
-      background: url("../img/volume.svg");
-      background-repeat: no-repeat; }
-    div#control-container div.amplitude-mute.amplitude-muted {
-      background: url("../img/mute.svg");
-      background-repeat: no-repeat; }
-
-div#control-container:after {
-  content: "";
-  display: table;
-  clear: both; }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
@@ -603,8 +653,8 @@ div#meta-container {
   3. Layout
 */
 body {
-  background-image: -webkit-linear-gradient(316deg, #3BD2AE 0%, #36BAC2 100%);
-  background-image: linear-gradient(-226deg, #3BD2AE 0%, #36BAC2 100%);
+  /* background-image: -webkit-linear-gradient(316deg, #3BD2AE 0%, #36BAC2 100%); */
+  /* background-image: linear-gradient(-226deg, #3BD2AE 0%, #36BAC2 100%); */
   height: 100vh;
   -webkit-font-smoothing: antialiased;
   font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
